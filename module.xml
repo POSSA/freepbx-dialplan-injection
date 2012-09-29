@@ -1,0 +1,35 @@
+<module>
+	<rawname>dialplaninjection</rawname>
+	<name>Dialplan Injection</name>
+	<version>0.1.1m</version>
+	<type>setup</type>
+	<category>Advanced</category>
+	<description>
+		Acts as a dialplan destination and can execute a variety of commands, then sends the call to another destination.
+              Can also be accessed by dialing an optional extension or pattern.
+	</description>
+	<menuitems>
+		<dialplaninjection>Dialplan Injection</dialplaninjection>
+	</menuitems>
+	<info>http://aussievoip.com.au/wiki/freePBX-DialplanInjection</info>
+        <depends>
+                <module>core</module>
+        </depends>
+        <changelog>
+                *0.1.1m* Fixed SQL install file and modification to extension varchar http://binfuser.com
+                *0.1.1* Fixed a few templates and version display bug.
+                *0.1.0* Removed unique constraint on direct dial extension.
+                        Added templates for most dialplan apps.
+                *0.0.3* Added ability to add line labels. Labels also become available as destinations for other modules.
+                        Each direct dial injection is now in its own context to allow individual inclusion in other contexts.
+                        Version now display correctly on screen.
+                *0.0.2* Fixed extension saving bugs, added pattern option.
+                        Commands changed to text area instead of individual boxes.
+                *0.0.1* Beta release
+        </changelog>
+	<attention>
+		This is an advanced module, and you should not use it without understanding asterisk dialplans!
+		This is meant as a convenience tool for someone who would have had to resort to config editing.
+		If you experience problems with it, just disable it and no harm done.
+	</attention>
+</module>
