@@ -11,7 +11,7 @@ function dialplaninjection_getmodulevalue($id) {
 	return isset($results)?$results[0][0]:null;
 }
 
-//used to get module information
+//used to set module information
 function dialplaninjection_setmodulevalue($id,$value) {
 	global $db;
 	$sql = "update dialplaninjection_module set value = '$value' where id = '$id'";
@@ -80,7 +80,6 @@ function dialplaninjection_commandtypes() {
 }
 
 //allow reload to get our config
-//
 function dialplaninjection_get_config($engine) {
   global $ext;
   switch($engine) {
@@ -249,7 +248,7 @@ global $currentcomponent;
 			$currentcomponent->addguielem('Commands', new guielement('commandsbox',$commandshtml,''), 3);
 			$currentcomponent->addguielem('Commands', new gui_selectbox('newcommand', $currentcomponent->getoptlist('commandslist'), '', 'New Command', 'Choose a command type from the list and submit to add a new command.',true,"javascript:document.frm_dialplaninjection.commands.value += '\\n' + document.frm_dialplaninjection.newcommand.options[document.frm_dialplaninjection.newcommand.selectedIndex].value;"));
 		}
-		$currentcomponent->addguielem('_bottom', new gui_link('link', _(dialplaninjection_getmodulevalue('moduledisplayname')." v".dialplaninjection_getmodulevalue('moduleversion')), 'http://aussievoip.com.au/wiki/freePBX-DialplanInjection', true, false), 9);
+//		$currentcomponent->addguielem('_bottom', new gui_link('link', _(dialplaninjection_getmodulevalue('moduledisplayname')." v".dialplaninjection_getmodulevalue('moduleversion')), 'http://aussievoip.com.au/wiki/freePBX-DialplanInjection', true, false), 9);
 	}
        $currentcomponent->addguielem('_top', new gui_hidden('action', ($extdisplay ? 'edit' : 'add')));
 }
@@ -360,4 +359,3 @@ function dialplaninjection_editcommands($injection,$commands) {
 	needreload();
 }
 
-?>

@@ -1,9 +1,11 @@
 <module>
 	<rawname>dialplaninjection</rawname>
 	<name>Dialplan Injection</name>
-	<version>0.1.1m</version>
-	<type>setup</type>
-	<category>Advanced</category>
+	<version>0.2.0</version>
+	<publisher>POSSA</publisher>
+	<license>GPLv2+</license>
+	<type>Other</type>
+	<category>Other</category>
 	<description>
 		Acts as a dialplan destination and can execute a variety of commands, then sends the call to another destination.
               Can also be accessed by dialing an optional extension or pattern.
@@ -11,11 +13,13 @@
 	<menuitems>
 		<dialplaninjection>Dialplan Injection</dialplaninjection>
 	</menuitems>
-	<info>http://aussievoip.com.au/wiki/freePBX-DialplanInjection</info>
+	<info>https://github.com/POSSA/freepbx-dialplan-injection</info>
         <depends>
                 <module>core</module>
+				<version>ge 2.9</version>
         </depends>
         <changelog>
+				*0.2.0* Maintenance taken over by POSSA and moved to Github
                 *0.1.1m* Fixed SQL install file and modification to extension varchar http://binfuser.com
                 *0.1.1* Fixed a few templates and version display bug.
                 *0.1.0* Removed unique constraint on direct dial extension.
